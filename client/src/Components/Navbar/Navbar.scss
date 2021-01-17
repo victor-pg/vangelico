@@ -1,0 +1,46 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+a {
+	text-decoration: none;
+}
+.navbar {
+	width: 20vw;
+	height: 100vh;
+	background-color: #f6f4ed;
+	font-family: "Roboto", sans-serif;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: fixed;
+
+	.nav-list {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: 10vh;
+		text-transform: uppercase;
+		list-style-type: none;
+		color: #62625f;
+		height: 100%;
+		font-size: 2.7vh;
+
+		li {
+			padding: 15px;
+
+			a {
+				color: #62625f;
+			}
+		}
+	}
+
+	.delimitator {
+		border: 0;
+		display: block;
+		width: 100px;
+		background-color: #d8d6d0;
+		height: 1px;
+	}	
+}
+

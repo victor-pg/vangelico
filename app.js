@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+var cors = require('cors');
 const config = require('./config/config.js');
 const getAllItemsRouter = require('./routes/getAllItems');
 const getAllItemsCartRouter = require('./routes/getAllItemsCart');
@@ -11,6 +12,7 @@ const app = express();
 
 
 app.use(express.json());
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(getAllItemsRouter);
