@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
-import ProductItem from '../../Components/ProductItem/ProductItem';
 import { connect } from "react-redux";
-import { ineleFetchData } from '../../redux/actions/inele';
+import { broseFetchData } from '../../redux/actions/brose';
+import ProductItem from '../../Components/ProductItem/ProductItem';
 import { addToCart } from '../../utils/axios';
-const InelePage = ({ inele, fetchData }) => {
+const BrosePage = ({ brose, fetchData }) => {
 
     useEffect(() => {
         fetchData();
@@ -11,8 +11,8 @@ const InelePage = ({ inele, fetchData }) => {
     return (
         <div className="content">
             <div className="cards">
-                {inele.map((inel) => {
-                    return <ProductItem item={inel} addToCart={addToCart} key={inel.id}/>
+            {brose.map((brosa) => {
+                    return <ProductItem item={brosa} addToCart={addToCart} key={brosa.id}/>
                 })}
             </div>
         </div>
@@ -21,13 +21,13 @@ const InelePage = ({ inele, fetchData }) => {
 
 const mapStateToProps = state => {
     return {
-        inele: state.inele
+        brose: state.brose
     };
 }
 const mapDispatchToProps = dispatch => {
     return {
-        fetchData: () => dispatch(ineleFetchData())
+        fetchData: () => dispatch(broseFetchData())
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(InelePage);
+export default connect(mapStateToProps, mapDispatchToProps)(BrosePage);

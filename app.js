@@ -8,6 +8,7 @@ const addNewItem = require('./routes/addNewItem');
 const removeItem = require('./routes/removeItem');
 const updateItem = require('./routes/updateItem');
 const getOneItem = require('./routes/getOneItem');
+const addToCart = require('./routes/addToCart');
 const app = express();
 
 
@@ -21,6 +22,7 @@ app.use(addNewItem);
 app.use(removeItem);
 app.use(updateItem);
 app.use(getOneItem);
+app.use(addToCart);
 
 
 app.listen(config.port,()=>{

@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import ProductItem from '../../Components/ProductItem/ProductItem';
 import { connect } from "react-redux";
-import { ineleFetchData } from '../../redux/actions/inele';
+import { cerceiFetchData } from '../../redux/actions/cercei';
 import { addToCart } from '../../utils/axios';
-const InelePage = ({ inele, fetchData }) => {
+const CerceiPage = ({ cercei, fetchData }) => {
 
     useEffect(() => {
         fetchData();
@@ -11,8 +11,8 @@ const InelePage = ({ inele, fetchData }) => {
     return (
         <div className="content">
             <div className="cards">
-                {inele.map((inel) => {
-                    return <ProductItem item={inel} addToCart={addToCart} key={inel.id}/>
+            {cercei.map((cercel) => {
+                    return <ProductItem item={cercel} addToCart={addToCart} key={cercel.id}/>
                 })}
             </div>
         </div>
@@ -21,13 +21,13 @@ const InelePage = ({ inele, fetchData }) => {
 
 const mapStateToProps = state => {
     return {
-        inele: state.inele
+        cercei: state.cercei
     };
 }
 const mapDispatchToProps = dispatch => {
     return {
-        fetchData: () => dispatch(ineleFetchData())
+        fetchData: () => dispatch(cerceiFetchData())
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(InelePage);
+export default connect(mapStateToProps, mapDispatchToProps)(CerceiPage);
